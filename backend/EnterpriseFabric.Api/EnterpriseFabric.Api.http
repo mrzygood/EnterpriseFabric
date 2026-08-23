@@ -1,0 +1,16 @@
+@EnterpriseFabric.Api_HostAddress = https://localhost:7039
+
+GET {{EnterpriseFabric.Api_HostAddress}}/openapi/v1.json
+Accept: application/json
+
+###
+
+GET {{EnterpriseFabric.Api_HostAddress}}/api/customers?pageSize=20
+Accept: application/json
+
+###
+
+GET {{EnterpriseFabric.Api_HostAddress}}/api/customers?pageSize=20&cursor=MjA=
+Accept: application/json
+
+###
