@@ -1,0 +1,56 @@
+:host {
+  display: block;
+}
+
+.grid {
+  display: grid;
+  font-size: 0.875rem;
+}
+
+.grid__header,
+.grid__row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
+.grid__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: canvas;
+}
+
+.grid__row {
+  contain: content;
+
+  &:hover {
+    background: color-mix(in srgb, canvastext 5%, transparent);
+  }
+}
+
+.grid__cell {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, canvastext 15%, transparent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.grid__cell--header {
+  font-weight: 600;
+  border-bottom-width: 2px;
+}
+
+.grid__status {
+  padding: 1rem 0.75rem;
+  color: color-mix(in srgb, canvastext 65%, transparent);
+}
+
+.grid__status--error {
+  color: crimson;
+}
+
+.grid__sentinel {
+  height: 1px;
+}

@@ -1,0 +1,39 @@
+<div
+  class="grid"
+  role="table"
+  [style.grid-template-columns]="templateColumns()"
+>
+  <div class="grid__header" role="row">
+    @for (column of columns(); track $index) {
+    <div class="grid__cell grid__cell--header" role="columnheader">
+      {{ column.efColumnDef() }}
+    </div>
+    }
+  </div>
+
+  @for (row of rows(); track rowId()(row); let index = $index) {
+  <div class="grid__row" role="row">
+    @for (column of columns(); track $index) {
+    <div class="grid__cell" role="cell">
+      <ng-container
+        [ngTemplateOutlet]="column.template"
+        [ngTemplateOutletContext]="{ $implicit: row, index: index }"
+      />
+    </div>
+    }
+  </div>
+  }
+</div>
+
+@if (errorMessage(); as error) {
+<p class="grid__status grid__status--error" role="alert">
+  {{ error }}
+  <button type="button" (click)="retry.emit()">Retry</button>
+</p>
+} @else if (isEmpty()) {
+<p class="grid__status">{{ emptyMessage() }}</p>
+} @if (loading()) {
+<p class="grid__status" aria-live="polite">Loading…</p>
+} @if (hasMore()) {
+<div #sentinel class="grid__sentinel" aria-hidden="true"></div>
+}

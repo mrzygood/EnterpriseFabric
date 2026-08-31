@@ -1,0 +1,78 @@
+<header class="page__header">
+  <h1>Customers</h1>
+  <span class="page__count">{{ store.count() }} loaded</span>
+</header>
+
+<ef-data-grid
+  [rows]="store.items()"
+  [rowId]="trackById"
+  [loading]="store.loading()"
+  [hasMore]="store.hasMore()"
+  [errorMessage]="store.error()"
+  emptyMessage="No customers yet."
+  (loadMore)="onLoadMore()"
+  (retry)="onLoadMore()"
+>
+  <ng-template
+    efColumnDef="Name"
+    [typeOf]="store.items()"
+    width="minmax(12rem, 1.4fr)"
+    let-customer
+  >
+    {{ displayName(customer) }}
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Company"
+    [typeOf]="store.items()"
+    width="minmax(12rem, 1.6fr)"
+    let-customer
+  >
+    {{ customer.company }}
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Job title"
+    [typeOf]="store.items()"
+    width="minmax(10rem, 1.2fr)"
+    let-customer
+  >
+    {{ customer.jobTitle }}
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Email"
+    [typeOf]="store.items()"
+    width="minmax(14rem, 1.6fr)"
+    let-customer
+  >
+    <a [href]="'mailto:' + customer.email">{{ customer.email }}</a>
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Location"
+    [typeOf]="store.items()"
+    width="minmax(10rem, 1fr)"
+    let-customer
+  >
+    {{ customer.city }}, {{ customer.country }}
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Status"
+    [typeOf]="store.items()"
+    width="7rem"
+    let-customer
+  >
+    <ef-customer-status-badge [status]="customer.status" />
+  </ng-template>
+
+  <ng-template
+    efColumnDef="Created"
+    [typeOf]="store.items()"
+    width="7rem"
+    let-customer
+  >
+    {{ customer.createdAt | date: 'yyyy-MM-dd' }}
+  </ng-template>
+</ef-data-grid>

@@ -1,0 +1,13 @@
+{
+  "name": "customers-feature-list",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/customers/feature-list/src",
+  "prefix": "ef",
+  "projectType": "library",
+  "tags": ["scope:customers", "type:feature"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

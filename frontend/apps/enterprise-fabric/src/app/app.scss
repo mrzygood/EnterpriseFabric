@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid color-mix(in srgb, canvastext 15%, transparent);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+}
+
+.nav__brand {
+  font-weight: 700;
+}
+
+.nav__link--active {
+  text-decoration: underline;
+  text-underline-offset: 0.35rem;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+}

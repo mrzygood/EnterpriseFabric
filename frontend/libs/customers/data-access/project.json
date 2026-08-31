@@ -1,0 +1,13 @@
+{
+  "name": "customers-data-access",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/customers/data-access/src",
+  "prefix": "ef",
+  "projectType": "library",
+  "tags": ["scope:customers", "type:data-access"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

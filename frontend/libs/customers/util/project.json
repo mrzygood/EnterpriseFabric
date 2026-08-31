@@ -1,0 +1,13 @@
+{
+  "name": "customers-util",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/customers/util/src",
+  "prefix": "ef",
+  "projectType": "library",
+  "tags": ["scope:customers", "type:util"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

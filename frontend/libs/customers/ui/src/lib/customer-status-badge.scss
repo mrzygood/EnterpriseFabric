@@ -1,0 +1,24 @@
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+.badge--active {
+  background: color-mix(in srgb, seagreen 20%, transparent);
+  color: darkgreen;
+}
+
+.badge--inactive {
+  background: color-mix(in srgb, canvastext 12%, transparent);
+  color: color-mix(in srgb, canvastext 70%, transparent);
+}
+
+.badge--prospect {
+  background: color-mix(in srgb, steelblue 20%, transparent);
+  color: darkslateblue;
+}

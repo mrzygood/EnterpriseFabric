@@ -1,0 +1,33 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "bundler",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": false,
+    "paths": {
+      "@ef/shared/util-types": ["./libs/shared/util-types/src/index.ts"],
+      "@ef/shared/data-access": ["./libs/shared/data-access/src/index.ts"],
+      "@ef/shared/ui-data-grid": ["./libs/shared/ui-data-grid/src/index.ts"],
+      "@ef/customers/util": ["./libs/customers/util/src/index.ts"],
+      "@ef/customers/data-access": [
+        "./libs/customers/data-access/src/index.ts"
+      ],
+      "@ef/customers/ui": ["./libs/customers/ui/src/index.ts"],
+      "@ef/customers/feature-list": [
+        "./libs/customers/feature-list/src/index.ts"
+      ],
+      "@ef/customers/shell": ["./libs/customers/shell/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
